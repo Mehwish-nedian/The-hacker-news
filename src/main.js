@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-//import {createStore} from 'vuex';
+import store from './store/index.js';
 import {createRouter, createWebHistory} from 'vue-router';
 import App from './App.vue';
 
@@ -11,6 +11,7 @@ import JobsPage from './pages/JobsPage.vue';
 import ShowPage from './pages/ShowPage.vue';
 import AskPage from "./pages/AskPage.vue";
 import TheArticle from "./components/TheArticle.vue";
+import TheUser from "./pages/Theuser.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,6 +23,10 @@ const router = createRouter({
     {
       path: "/top",
       component: TopPage
+    },
+    {
+      path: "/user/:user",
+      component: TheUser
     },
     {
       path: '/story/:id',
@@ -47,5 +52,6 @@ const router = createRouter({
 });
 const app = createApp(App);
 app.component("post-header", PostHeader);
+app.use(store);
 app.use(router);
 app.mount('#app');

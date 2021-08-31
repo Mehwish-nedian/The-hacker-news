@@ -1,3 +1,25 @@
 <template>
-    <h1>New</h1>
+    <div>
+        <item v-for="story in stories" :key="story" :story= story />
+    </div>
 </template>
+
+<script>
+import item from '../components/Item.vue';
+export default {
+    components: {
+        item
+    },
+    data(){
+        return{
+            err: null,
+            stories: this.$store.state.newstories
+        }
+    },
+    created(){
+        if(this.$store.state.newstories.length ==0){
+            this.$store.dispatch('fetchNewStories');
+        }
+    }
+}
+</script>

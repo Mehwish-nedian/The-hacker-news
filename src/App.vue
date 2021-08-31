@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  margin: 0;
+ 
   
   overflow-x: hidden;
  
@@ -45,8 +45,9 @@ body {
 .container {
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  
+  margin: 3rem auto 0 auto;
+  max-width: 50rem;
 }
 @media (min-width: 768px) {
   .container {
