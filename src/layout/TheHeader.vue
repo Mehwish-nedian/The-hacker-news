@@ -7,11 +7,11 @@
       </a>
 
       <ul class="pure-menu-list">
-          <li class="pure-menu-item"><router-link to="/top">Top</router-link></li>
-          <li class="pure-menu-item"><router-link to="/new">New</router-link></li>
-          <li class="pure-menu-item"><router-link to="/show">Show</router-link></li>
-          <li class="pure-menu-item"><router-link to="/ask">Ask</router-link></li>
-          <li class="pure-menu-item"><router-link to="/jobs">Jobs</router-link></li>
+          <li class="pure-menu-item"><router-link to="/top/1">Top</router-link></li>
+          <li class="pure-menu-item"><router-link to="/new/1">New</router-link></li>
+          <li class="pure-menu-item"><router-link to="/show/1">Show</router-link></li>
+          <li class="pure-menu-item"><router-link to="/ask/1">Ask</router-link></li>
+          <li class="pure-menu-item"><router-link to="/jobs/1">Jobs</router-link></li>
           <li class="pure-menu-item"><a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Built with Vue</a> </li>
       </ul>
     </div>

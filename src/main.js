@@ -18,10 +18,14 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "/top"
+      redirect: "/top/1"
     },
     {
-      path: "/top",
+      path: "/top/1",
+      component: TopPage
+    },
+    {
+      path: "/top/:pno",
       component: TopPage
     },
     {
@@ -37,16 +41,32 @@ const router = createRouter({
       component: NewPage
     },
     {
+      path: "/new/:pageno",
+      component: NewPage
+    },
+    {
       path: "/ask",
       component: AskPage
+    },
+    {
+      path: "/ask/:pno",
+      component: TopPage
     },
     {
       path: "/show",
       component: ShowPage
     },
     {
+      path: "/show/:pno",
+      component: TopPage
+    },
+    {
       path: "/jobs",
       component: JobsPage
+    },
+    {
+      path: "/jobs/:pno",
+      component: TopPage
     }
   ]
 });

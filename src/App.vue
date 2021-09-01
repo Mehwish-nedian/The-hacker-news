@@ -1,8 +1,11 @@
 <template>
   <section>
     <the-header></the-header>
-    <post-header></post-header>
-    <router-view></router-view>
+    <router-view v-slot="{Component}">
+    <transition name="route" mode="out-in">
+        <component :is="Component"></component>
+    </transition>
+  </router-view>
   </section>
 </template>
 
@@ -30,11 +33,7 @@ html {
 }
 
 body {
- 
-  
   overflow-x: hidden;
- 
-
   background-color: #f0f2fa;
   font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial",
     sans-serif;
@@ -65,5 +64,20 @@ body {
   }
 }
 
+
+.route-enter-active {
+  transition: opacity 0.3s ease-out;
+}
+.route-leave-active {
+  transition: opacity 0.3s ease-in;
+}
+.route-enter-from,
+.route-button-leave-to {
+  opacity: 0;
+}
+.route-enter-to,
+.route-leave-from {
+  opacity: 1;
+}
 
 </style>

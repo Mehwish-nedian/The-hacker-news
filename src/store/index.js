@@ -10,7 +10,8 @@ const store = createStore({
         askstories: [],
         showstories: [],
         jobstories: [],
-        user: {}
+        user: {},
+        fetchCompletionStatus: false
     },
     mutations,
     actions,

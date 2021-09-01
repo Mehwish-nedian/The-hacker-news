@@ -7,7 +7,7 @@ export default {
             throw err;
         }
         else{
-            let results = topstory.slice(0, 25);
+            let results = topstory.slice(0, 75);
             for(let i=0; i<results.length; i++){
                 let id = results[i];
                 const thestoryresponse = await fetch('https://hacker-news.firebaseio.com/v0/item/' + id + ".json");
@@ -48,6 +48,7 @@ export default {
     },
 
     async fetchAskStories(context){
+        context.commit('updateFetchStatus', false);
         const askstoryresponse = await fetch('https://hacker-news.firebaseio.com/v0/askstories.json');
         const askstory = await askstoryresponse.json();
         if(!askstoryresponse.ok){
@@ -55,7 +56,7 @@ export default {
             throw err;
         }
         else{
-            let results = askstory.slice(0, 25);
+            let results = askstory.slice(0, 10);
             for(let i=0; i<results.length; i++){
                 let id = results[i];
                 const thestoryresponse = await fetch('https://hacker-news.firebaseio.com/v0/item/' + id + ".json");
@@ -67,7 +68,9 @@ export default {
                 else {
                     context.commit('appendAskStory', thestory);
                 }
+                
             }
+            context.commit('updateFetchStatus', true);
         }
     },
 

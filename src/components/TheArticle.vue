@@ -1,9 +1,11 @@
 <template>
-
-  <div class="container">
-    <h2>{{ story.title }}</h2>
-    <p>Score: {{ story.score }}</p>
-    <p>{{ story.url }}</p>
+<section class="container">
+  <div class="main-header">
+    <h2 class="story-heading">{{ story.title }} &nbsp;</h2><span class="greytext"> {{ story.url }} </span>
+    <p class="greytext">Score: {{ story.score }} points | by <span>{{story.by}}</span>
+    </p>
+  </div>
+  <div class="">
     <div v-for="comment in comments" :key="comment.id">
       <div class="comment-wrap">
         <div class="comment-block">
@@ -15,7 +17,8 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+</section>
 </template>
 
 <script>
@@ -63,7 +66,20 @@ export default {
   width: 100%;
   min-height: 5.3125rem;
 }
-
+.story-heading{
+  display: inline-block;
+  margin-bottom: 10px ;
+}
+.main-header{
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.greytext{
+  color: grey;
+  font-size: 90%;
+}
 .photo {
   padding-top: 0.625rem;
   display: table-cell;

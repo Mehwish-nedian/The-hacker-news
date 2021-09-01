@@ -6,11 +6,11 @@
         <a :href="story.url" target="_blank" >{{story.title}}</a><span></span>
         <span>{{story.url}}</span><br> by 
         <router-link :to="'/user/'+story.by">
-        <span class="meta">{{story.by}}</span></router-link>
+        <span class="meta hoverEffect">{{story.by}}</span></router-link>
         <span class="meta">
             | {{story.time}} Ago | 
             <router-link :to="'/story/' + story.id">
-            {{story.descendants}} comments
+            {{story.descendants}} <span class="hoverEffect">comments</span>
             </router-link>
         </span>
         
@@ -47,11 +47,19 @@ export default {
   }
   .story a span {
     font-size: 0.85em;
-    margin-left: 10px;
     color: #828282;
   }
   .story .meta {
     font-size: 0.85em;
     color: #828282;
+  }
+  .hoverEffect{
+    color: grey;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+  .hoverEffect:hover{
+    color: #f60;
   }
 </style>

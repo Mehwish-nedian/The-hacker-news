@@ -17,6 +17,9 @@ export default {
     getUser(state, user){
         state.user = user
         console.log(state.user);
+    },
+    updateFetchStatus(state, val){
+        state.fetchCompletionStatus = val;
     }
 
 }
